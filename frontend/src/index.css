@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Premium Ivory/Cream Palette */
+    --background: 45 20% 97%;
+    --foreground: 30 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 15%;
+
+    /* Warm charcoal primary */
+    --primary: 30 8% 20%;
+    --primary-foreground: 45 20% 97%;
+
+    /* Soft cream secondary */
+    --secondary: 40 15% 94%;
+    --secondary-foreground: 30 10% 25%;
+
+    /* Muted warm tones */
+    --muted: 40 10% 92%;
+    --muted-foreground: 30 8% 45%;
+
+    /* Subtle warm accent */
+    --accent: 35 30% 88%;
+    --accent-foreground: 30 10% 20%;
+
+    /* Error state */
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success state */
+    --success: 145 50% 40%;
+    --success-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 35 15% 88%;
+    --input: 35 15% 88%;
+    --ring: 30 20% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(45, 45, 45, 0.03);
+    --shadow-md: 0 4px 12px -2px rgba(45, 45, 45, 0.06), 0 2px 4px -1px rgba(45, 45, 45, 0.03);
+    --shadow-lg: 0 12px 32px -4px rgba(45, 45, 45, 0.08), 0 4px 12px -2px rgba(45, 45, 45, 0.04);
+    --shadow-xl: 0 24px 48px -8px rgba(45, 45, 45, 0.1), 0 8px 24px -4px rgba(45, 45, 45, 0.05);
+
+    /* Sidebar (unused but required) */
+    --sidebar-background: 45 20% 97%;
+    --sidebar-foreground: 30 10% 25%;
+    --sidebar-primary: 30 8% 20%;
+    --sidebar-primary-foreground: 45 20% 97%;
+    --sidebar-accent: 40 15% 94%;
+    --sidebar-accent-foreground: 30 10% 20%;
+    --sidebar-border: 35 15% 88%;
+    --sidebar-ring: 30 20% 50%;
+  }
+
+  .dark {
+    --background: 30 10% 8%;
+    --foreground: 45 15% 95%;
+
+    --card: 30 10% 12%;
+    --card-foreground: 45 15% 95%;
+
+    --popover: 30 10% 12%;
+    --popover-foreground: 45 15% 95%;
+
+    --primary: 45 15% 95%;
+    --primary-foreground: 30 10% 8%;
+
+    --secondary: 30 8% 18%;
+    --secondary-foreground: 45 15% 90%;
+
+    --muted: 30 8% 18%;
+    --muted-foreground: 40 10% 60%;
+
+    --accent: 30 8% 22%;
+    --accent-foreground: 45 15% 95%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 8% 20%;
+    --input: 30 8% 20%;
+    --ring: 40 15% 70%;
+
+    --sidebar-background: 30 10% 10%;
+    --sidebar-foreground: 45 15% 90%;
+    --sidebar-primary: 45 15% 95%;
+    --sidebar-primary-foreground: 30 10% 8%;
+    --sidebar-accent: 30 8% 18%;
+    --sidebar-accent-foreground: 45 15% 95%;
+    --sidebar-border: 30 8% 20%;
+    --sidebar-ring: 40 15% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer components {
+  /* Premium card styling */
+  .auth-card {
+    @apply bg-card rounded-2xl p-8 md:p-10;
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Input styling */
+  .auth-input {
+    @apply w-full px-4 py-3.5 rounded-xl bg-secondary/50 border border-border
+           text-foreground placeholder:text-muted-foreground
+           transition-all duration-300 ease-out
+           focus:outline-none focus:ring-2 focus:ring-ring/20 focus:border-primary/30
+           focus:bg-card;
+  }
+
+  /* Primary button styling */
+  .auth-button {
+    @apply w-full py-3.5 px-6 rounded-xl font-medium text-sm
+           bg-primary text-primary-foreground
+           transition-all duration-300 ease-out
+           hover:opacity-90 hover:shadow-lg
+           active:scale-[0.98]
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
+  }
+
+  /* Link styling */
+  .auth-link {
+    @apply text-sm text-muted-foreground hover:text-foreground
+           transition-colors duration-200 underline-offset-4 hover:underline;
+  }
+
+  /* Error message styling */
+  .auth-error {
+    @apply text-sm text-destructive bg-destructive/10 px-4 py-3 rounded-lg
+           border border-destructive/20;
+  }
+
+  /* Success message styling */
+  .auth-success {
+    @apply text-sm px-4 py-3 rounded-lg border;
+    color: hsl(var(--success));
+    background-color: hsl(var(--success) / 0.1);
+    border-color: hsl(var(--success) / 0.2);
+  }
+
+  /* Label styling */
+  .auth-label {
+    @apply text-sm font-medium text-foreground mb-2 block;
+  }
+
+}
+
+@layer utilities {
+  /* Smooth scrolling */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  /* Premium text gradient */
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(30 10% 15%) 0%, hsl(30 8% 35%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
