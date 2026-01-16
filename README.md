@@ -48,13 +48,13 @@ SecureEntry/
 ## 📸 Screenshots
 
 ### Login Page
-![Login Page](frontend/screenshots/login.png)
+![Login Page](frontend/screenshots/Login.png)
 
 ### Register Page
-![Register Page](frontend/screenshots/register.png)
+![Register Page](frontend/screenshots/Register.png)
 
 ### Logged In / Logout
-![Logout Page](frontend/screenshots/logout.png)
+![Logout Page](frontend/screenshots/Logout.png)
 
 ---
 ## ▶️ How to Run the Project Locally
