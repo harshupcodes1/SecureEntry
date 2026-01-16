@@ -69,7 +69,7 @@ const RegisterForm3D = ({ onSwitch, onSuccess }) => {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          placeholder="John Doe"
+          placeholder="Harsh Upadhyay"
           delay={0.15}
         />
 

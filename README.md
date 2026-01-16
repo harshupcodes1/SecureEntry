@@ -44,6 +44,19 @@ SecureEntry/
 └── backend/    # Server-side authentication logic
 
 ---
+
+## 📸 Screenshots
+
+### Login Page
+![Login Page](frontend/screenshots/login.png)
+
+### Register Page
+![Register Page](frontend/screenshots/register.png)
+
+### Logged In / Logout
+![Logout Page](frontend/screenshots/logout.png)
+
+---
 ## ▶️ How to Run the Project Locally
 
 1️⃣ Clone the repository
